@@ -31,21 +31,15 @@ const findUserByEmail = async (email) => {
 
 const generateToken = async (hashPassword, comparePassword, userData) => {
   return new Promise((res, rej) => {
-    //console.log("HASHpaswprd ", hashPassword);
-    //console.log("comparePassword ", comparePassword);
-    //console.log("userData ", userData);
     if (bcryptjs.compareSync(comparePassword, hashPassword)) {
-      //console.log("SIGN");
       jwt.sign(
         { user: userData },
         process.env.SECRET_KEY,
         { expiresIn: "24h" },
         (err, token) => {
-          //console.log("ERROR ", err);
           if (err) {
             rej("PASSWORD O USUARIO INVALIDO");
           }
-          //console.log("RES OK ", token);
           res(token);
         }
       );

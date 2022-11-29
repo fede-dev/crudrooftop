@@ -34,25 +34,20 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const reqUser = req.body;
-    //console.log("EMAIL USER ", reqUser.email);
     let userFind = await userServices.findUserByEmail(reqUser.email);
-    //console.log("USERFIND ");
     if (!userFind) {
       console.log("ERROR ");
       res.status(404).json("error en if");
     }
-    //console.log("usertojken ");
     const userToken = { user: userFind.email, id: userFind.id };
-    //console.log("USERTOKEN ", userToken);
     let token = await userServices.generateToken(
       userFind.password,
       reqUser.password,
       userToken
     );
-    //console.log("TOKEN ", token);
+
     res.status(200).json({ token: token });
   } catch (error) {
-    //console.log("ERROR CATCH", error);
     res.status(400).json("Error", error);
   }
 });

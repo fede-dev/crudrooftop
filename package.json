@@ -19,7 +19,6 @@
     "helmet": "^6.0.0",
     "jsonschema": "^1.4.1",
     "jsonwebtoken": "^8.5.1",
-    "mocha": "^10.1.0",
     "mongoose": "^6.7.3"
   },
   "devDependencies": {
@@ -28,6 +27,7 @@
     "@babel/node": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
     "babel-loader": "^9.1.0",
+    "mocha": "^10.1.0",
     "nodemon": "^2.0.20",
     "nodemon-webpack-plugin": "^4.8.1",
     "webpack": "^5.75.0",

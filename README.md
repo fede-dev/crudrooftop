@@ -1,5 +1,7 @@
-"start": "webpack --watch --config webpack.config.js"
+#Rooftop CRUD
 
-throw new Error('ES Modules may not assign module.exports or exports., Use ESM export syntax, instead: ' + module.id);
+Entry point:
+testbackend/src/app.js
 
-Error: ES Modules may not assign module.exports or exports., Use ESM export syntax, instead:
+Initialization:
+npm start
