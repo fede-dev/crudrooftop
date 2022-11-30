@@ -20,7 +20,18 @@ const uservalidationSchema = {
   required: ["name", "last_name", "email", "password"],
 };
 
+const loginvalidationSchema = {
+  id: "/User",
+  type: "object",
+  properties: {
+    email: { type: "string", minLength: 1 },
+    password: { type: "string", minLength: 1 },
+  },
+  required: ["email", "password"],
+};
+
 module.exports = {
   User,
   uservalidationSchema,
+  loginvalidationSchema,
 };

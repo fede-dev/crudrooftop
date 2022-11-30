@@ -11,7 +11,6 @@ const verifytoken = (req, res, next) => {
       } else {
         req.user = tokenInfo.user;
       }
-
       next();
     });
   } else {
